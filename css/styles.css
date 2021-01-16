@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ################ HERO ################ */
+
+/* section */
+
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 85%,#009696), url(../img/hero-banner.gif);
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+}
+
+/* class */
+
+.logo {
+    width: 140px;
+    position:absolute;
+    top: 3%;
+    left: 10%; 
+}
+
+.hero-text {
+    text-align: center;
+    color: #FFFFFF;
+    padding-top:180px;
+}
+
+.hero-text h1 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 120px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.hero-btn {
+    margin: 70px auto 0;
+}
+
+.hero-btn a {
+    width: 200px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 0;
+    color: #FFFFFF;
+    border: .5px solid #FFFFFF;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s;
+}
+
+.hero-btn a span {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #FFFFFF;
+    z-index: -1;
+    transition: .5s;
+}
+
+.hero-btn a:hover span {
+    width: 100%;
+}
+
+.hero-btn a:hover {
+    color: #000000;
+}
+
+/* ################ END HERO ################ */
+
+/* ################ SIDE NAVIGATION ################ */
+
+#sideNav{
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    right: -250px;
+    top: 0;
+    background: #009696;
+    z-index: 2; 
+    transition: 0.5s;  
+}
+
+nav ul li {
+    list-style: none;
+    margin: 50px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+#menu-btn {
+    width: 50px;
+    height: 50px;
+    background: #009696;
+    text-align: center;
+    position: fixed;
+    right: 30px;
+    top: 20px;
+    border-radius: 3px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+#menu-btn img {
+    width: 20px;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 750px) {
+    .hero-text h1 {
+        font-size: 50px;
+    }
+    .hero-btn a {
+        display: block;
+        margin: 20px auto;
+    }
+}
+/* ################ END SIDE NAVIGATION ################ */
+
+/* ################ LEARN SECTION ################ */
+
+#learn {
+    width: 100%;
+    padding: 80px 0;
+    background: #009696;
+}
+
+#learn .title-text {
+    margin-top:75px;
+}
+
+.title-text {
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.title-text h3 {
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    color:#FFFFFF;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.title-text h3::after {
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient( #FFFFFF, #009696);
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1;
+    transform:rotate(10deg);
+    border-top-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.title-text h1 {
+    font-size: 50px;
+}
+
+.learn-box {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.learn-features {
+    flex-basis: 50%;
+}
+
+.learn-features-img {
+    flex-basis: 50%;
+    margin: auto;
+}
+
+.learn-features-img img {
+    width: 75%;
+    border-radius: 10px;
+}
+
+.learn-features h1 {
+    text-align: left;
+    margin-bottom: 10px;
+    font-style: bold;
+    color: #FFFFFF;
+}
+
+.learn-features-desc {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.learn-feature-icon .fa {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+.learn-feature-text p {
+    padding: 0 20px;
+    text-align: initial;
+}
+
+/* unvisited link */
+.learn-feature-text a {
+    color: #FFD769;
+}
+
+/* visited link */
+.learn-feature-text a:visited {
+    color: #FF8C69;
+  }
+  
+  /* mouse over link */
+  .learn-feature-text a:hover {
+    color: #66F9D7;
+  }
+  
+  /* selected link */
+  .learn-feature-text a:active {
+    color: #FFD769;
+  }
+
+@media screen and (max-width: 750px) {
+    .title-text h1 {
+        font-size: 35px;
+    }
+    .learn-features {
+        flex-basis: 100%;
+    }
+    .learn-features-img {
+        flex-basis: 100%;
+    }
+    .learn-features-img img{
+        width: 100%;
+    }
+}
+/* ################ END LEARN SECTION ################ */
+
+/* ################ BENEFITS SECTION ################ */
+
+#benefits {
+    width: 100%;
+    padding: 80px 0;
+    background: #A9A9A9;
+}
+
+.benefits-box {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.single-benefit {
+    flex-basis: 48%;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.single-benefit img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.static-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 1;
+    transition: .1s;
+}
+.single-benefit:hover .benefit-title {
+    opacity: 0;
+}
+
+.benefit-title {
+    width: 80%;
+    position: absolute;
+    bottom: 45%;
+    left: 50%;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 60px;
+    -webkit-text-stroke: 1px black;
+    text-shadow:
+    3px 3px 0 #000,
+  -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
+    opacity: 1;
+    transform: translateX(-50%);
+    transition: .75s;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    background: linear-gradient(rgba(0,0,0,0.5), #009688);
+    opacity: 0;
+    transition: .75s;
+}
+
+.single-benefit:hover .overlay {
+    opacity: 1;
+}
+
+.benefit-desc {
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: .75s;
+}
+
+.benefit-desc h3 {
+    font-size: 28px;
+}
+
+.benefit-desc p {
+    font-size: 16px;
+}
+
+.hr {
+    background: #FFFFFF;
+    height: 2px;
+    border: 0;
+    margin: 15px auto;
+    width: 60%;
+}
+
+.single-benefit:hover .benefit-desc {
+    bottom: 35%;
+    opacity: 1;
+}
+
+.single-benefit:hover .static-overlay {
+    opacity: 0;
+}
+
+@media screen and (max-width: 750px){
+    .single-benefit {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+    .benefit-desc p {
+        font-size: 12px;
+    }
+    hr {
+        margin: 5px auto;
+    }
+    .single-benefit:hover .benefit-desc {
+        bottom: 30% !important;
+    }
+}
+/* ################ END BENEFITS SECTION ################ */
