@@ -13,7 +13,41 @@
     <body>
 
         <section id="learn-top">
+            <img src="img/logo-dark.png" class="logo">
         </section>
+
+
+        <header>
+            <h1>A Video Heart Rate Monitor
+                <span>Powered by OpenCV</span>
+            </h1>
+
+            <p>Using face detection, ROI extraction, and analyzing RGB fluctuations to sense pulse rate remotely</p>
+        </header>
+        <div class="learn-intro-container">
+            <div class="learn-intro-box box-teal box-push">
+                <h2>Neural Networks</h2>
+                <p>Laying the foundation for how they work</p>
+                <i class="fa fa-connectdevelop fa-3x" aria-hidden="true"></i>
+                <a href="#learn-nn-intro">Jump to section</a>
+            </div>
+            <div class="learn-intro-box box-red">
+                <h2>Photoplethysmography</h2>
+                <p>Explaining what it is, its uses and benefits</p>
+                <i class="fa fa-heartbeat fa-3x" aria-hidden="true"></i>
+                <a href="#learn-ppg-intro">Jump to section</a>
+            </div>
+            <div class="learn-intro-box box-orange box-push">
+                <h2>Computer Vision Problems and Methods</h2>
+                <p>Delving into face detection, ROI extraction, analyzing RGB fluctuations</p>
+                <i class="fa fa-video-camera fa-3x" aria-hidden="true"></i>
+            </div>
+            <div class="learn-intro-box box-blue">
+                <h2>Future Innovations</h2>
+                <p>If we can do this, imagine what else we can do!</p>
+                <i class="fa fa-bullseye fa-3x" aria-hidden="true"></i>
+            </div>
+        </div>
 
         <div id="sideNav">
             <nav>
@@ -29,53 +63,54 @@
             <img src="img/menu.png" id="menu">
         </div>
 
+        <div class="pimg-ppg">
+            <div class="pimg-text">
+                <span class="border">
+                    Photoplethysmography
+                </span>
+            </div>
+        </div>
 
         <!-- LEARN section -->
 
-        <section id="learn">
+        <section id="learn-ppg-intro">
             <div class="title-text">
                 <h3>INTRODUCTION</h3>
                 <h1>What is Photoplethysmography?</h1>
-                <h2>Summary paragraph</h2>
-            </div>
-            <div class ="learn-box">
-                <div class="learn-features">
-                    <h1>Learn</h1>
-                    <div class="learn-features-desc">
-                        <div class="learn-feature-icon">
-                            <i class="fa fa-leanpub" aria-hidden="true"></i>
-                        </div>
-                        <div class="learn-feature-text">
-                            <p><a href="learn.html">Review more info</a> about the what and why of photoplethysmography as well as key concepts to help understand our project.</p>
-                        </div>
-                    </div>
-                    <h1>Visualize</h1>
-                    <div class="learn-features-desc">
-                        <div class="learn-feature-icon">
-                            <i class="fa fa-area-chart" aria-hidden="true"></i>
-                        </div>
-                        <div class="learn-feature-text">
-                            <p><a href="https://pulse-ml.herokuapp.com/">View our interactive web app</a> for real-time pulse monitoring on Streamlit.</p>
-                        </div>
-                    </div>
-                    <h1>Watch</h1>
-                    <div class="learn-features-desc">
-                        <div class="learn-feature-icon">
-                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
-                        </div>
-                        <div class="learn-feature-text">
-                            <p><a href="www.google.com">See our demo</a> where we put everything together!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="learn-features-img">
-                    <img src="img/home-learn.jpg">
+                <br><br>
+                <ul>The word itself is derived from the following Greek words:</ul><br>
+                <ul>
+                    <li>"phōs" - light, to shine</li>
+                    <li>"plethysmos" - increasing, enlarging, becoming full</li>
+                    <li>"graphein" -to write</li>
+                </ul>
+
+                <div class="blobs-container">
+                    <div class="blob red" style="animation-delay: 0s"></div>
+                    <div class="blob red" style="animation-delay: .1s"></div>
+                    <div class="blob red" style="animation-delay: .2s"></div>
+                    <div class="blob red" style="animation-delay: .3s"></div>
+                    <div class="blob red" style="animation-delay: .4s"></div>
+                    <div class="blob red" style="animation-delay: .5s"></div>
+                    <div class="blob red" style="animation-delay: .6s"></div>
+                    <div class="blob red" style="animation-delay: .7s"></div>
+                    <div class="blob red" style="animation-delay: .8s"></div>
                 </div>
             </div>
-            <div class="title-text">
-                <h1>Team</h1>
-                <p>Scroll down to learn more</p>    
-            </div>
+            
+            <p>Loosely interpreted, the word refers to the recording of swellings as shown in the light. In this context, the swellings come from blood being pumped from the heart to every part of the body through a system of blood vessels called the circulatory system.
+
+            <p>Every time a person's heart beats, the amount of blood that reaches the capillaries in the fingers and face swells and then recedes. Because blood absorbs light, apps on a phone can measure heart rate by detecting ebb and flow just by using the flash of a camera phone to illuminate the skin and create a reflection.</p>
+
+            <p>As a caveat, it shouldn't come as a surprise that DIY heart rate tracking apps don't perform as consistently as nor as well as clinical grade equipment (e.g. electrocardiogram) and known methods (e.g. fingertip pulse oximetry). Studies have found that heart rate readings generated by apps were off by 20+ beats per minute in over 20% of measurements. At the same time, if you're just looking for a high-level overview of your heart rate, it's hard to beat the convenience that this low-cost, non-invasive and safe optical technique provides.</p>
+
+            <p>So much goes on underneath the skin that is hard to see with the naked eye. While it's much easier for computers to do the same, they have their own challenges to overcome, too.</p>
+
+            <p>
+                <center><a href="#learn-top">Back to the top</a></center>
+            </p>
+
+            
  
         </section>
 
@@ -85,7 +120,7 @@
             <div class="title-text">
                 <h3>Benefits</h3>
                 <h1>Why use it?</h1>
-                <p>Hover over the images below for more info.</p>
+                <p class="subtitle">Hover over the images below for more info.</p>
             </div>
             <div class="benefits-box">
                 <div class="single-benefit">
@@ -133,8 +168,41 @@
                     </div>
                 </div>
             </div>
+            <p>
+                <center><a href="#learn-top">Back to the top</a></center>
+            </p>
         </section>
 
+        <div class="pimg-nn">
+            <div class="pimg-text">
+                <span class="border">
+                    Neural Networks
+                </span>
+            </div>
+        </div>
+
+        <section id="learn-nn-intro" class="section section-dark">
+            <div class="title-text">
+                <h3>INTRODUCTION</h3>
+                <h1>What is a neural network?</h1>
+            
+            <p>Neural networks form the base of deep learning, which is a subfield of machine learning where the algorithms are inspired by the structure of the human brain. That is, neural networks are humankind's attempt to copy the brain to create artificial intelligence by taking in data, training itself to recognize patterns in the data, and then predicting the output for a new set of similar data.</p>
+
+            <p>First off, how does the brain work? To be honest, the brain is the most complicated organ in the human body that's been studied and hypothesized for centuries, so there's a lot we still don't know. For now, here's what we do know.</p>
+                
+            <p>Take a look at this image of a network of brain neurons below with a close up of what a neuron looks like.</p>
+
+            <div class="brain-neurons-magnify-container">
+                <div class="brain-neurons-magnify-container-overlay"></div>
+            </div>
+
+            <p>
+                <center><a href="#learn-top">Back to the top</a></center>
+            </p>
+
+            </section>          
+ 
+        </section>
 
     </body>
 

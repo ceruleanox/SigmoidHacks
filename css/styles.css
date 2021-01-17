@@ -1,12 +1,17 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #FDFDFD;
 }
 
+/******************************************************/
+/*********************** INDEX ************************/
+/******************************************************/
 
 /* ################ HERO ################ */
 
@@ -42,6 +47,8 @@ body {
 .hero-text p {
     font-size: 20px;
     font-style: italic;
+    color: #FFFFFF;
+    text-align: center;
 }
 
 .hero-btn {
@@ -151,11 +158,25 @@ nav ul li a {
     padding-bottom: 80px;
 }
 
-.title-text h3 {
+#learn .title-text h3 {
     margin: auto;
     font-size: 30px;
     font-weight: bold;
     color:#FFFFFF;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.title-text h3 {
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    color:#009696;
+    margin: auto;
+    font-size: 30px;
+    font-weight: bold;
+    color: #009696;
     position: relative;
     display: inline-block;
     z-index: 1;
@@ -182,6 +203,7 @@ nav ul li a {
 .learn-box {
     width: 80%;
     margin: auto;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -205,7 +227,7 @@ nav ul li a {
 .learn-features h1 {
     text-align: left;
     margin-bottom: 10px;
-    font-style: bold;
+    font-weight: bold;
     color: #FFFFFF;
 }
 
@@ -264,14 +286,46 @@ nav ul li a {
         width: 100%;
     }
 }
+
+.blobs-container {
+    display: inline-block;
+    transform: translateY(35px);
+}
+
+.blob.red {
+    display: inline-block;
+    background: #da3731;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255,80,80,1);
+    margin: 10px;
+    height: 20px;
+    width: 20px;
+    transform: scale(1);
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% {
+        transform: scale(0.85);
+        box-shadow: 0 0 0 0 rgba(255, 1, 1, 0.75);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(255,80,80,0);
+    }
+    100% {
+        transform: scale(0.85);
+        box-shadow: 0 0 0 0 rgba(255,80,80,0);
+    }
+}
+
 /* ################ END LEARN SECTION ################ */
 
 /* ################ BENEFITS SECTION ################ */
 
 #benefits {
     width: 100%;
-    padding: 80px 0;
-    background: #A9A9A9;
+    padding: 50px 0;
 }
 
 .benefits-box {
@@ -361,6 +415,7 @@ nav ul li a {
 
 .benefit-desc p {
     font-size: 16px;
+    color: #FFFFFF;
 }
 
 .hr {
@@ -396,3 +451,244 @@ nav ul li a {
     }
 }
 /* ################ END BENEFITS SECTION ################ */
+
+/******************************************************/
+/*********************** INDEX ************************/
+/******************************************************/
+
+/* ################ LEARN INTRO SECTION ################ */
+
+header {
+    margin: 50px auto;
+    max-width: 550px;
+    text-align: center;
+}
+
+header p{
+    margin: 20px auto;
+    text-align: center;
+}
+
+
+h1 {
+    font-weight: 200;
+    margin: 0;
+}
+
+h1 span {
+    font-weight: 600;
+}
+
+p .subtitle{
+    color:#333333;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+}
+
+p {
+    color:#000000;
+    text-align: left;
+    margin: auto 50px;
+    margin-bottom: 16px;
+}
+
+.learn-intro-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    max-width: 1150;
+}
+
+.learn-intro-box {
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2), 0 6px 6px rgba(0, 0 , 0, 0.1);
+    border-radius: 5px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+    width: 350px;
+}
+
+.learn-intro-box::after {
+    content: '';
+    background-color: #FF8C69;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+}
+
+.box-teal::after {
+    background-color: teal;
+}
+
+.box-red::after {
+    background-color: red;
+}
+
+.box-orange::after {
+    background-color: orange;
+}
+
+.box-blue::after {
+    background-color: blue;
+}
+
+.box-push {
+    transform: translateY(50%);
+}
+
+.learn-intro-box h2 {
+    margin: 0;
+}
+
+.learn-intro-box p {
+    font-size: 14px;
+    margin: 15px 0 30px;
+}
+
+.learn-intro-box fa {
+    display: inline-block;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 750px){
+    .box-push {
+        transform: translateY(0);
+    }
+}
+
+/* ################ END LEARN INTRO SECTION ################ */
+
+/* ################ PARALLAX IMAGE SECTION ################ */
+
+.pimg-ppg,
+.pimg-nn {
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.pimg-ppg {
+    background-image: url(../img/learn-section-ppg.jpg);
+    min-height: 100%;
+}
+
+.pimg-nn {
+    background-image: url(../img/learn-section-nn.png);
+    min-height: 100%;
+}
+
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
+
+.section-light{
+    background-color: #F5F5F5F5;
+    color: #888888;
+}
+
+.section-dark{
+    background-color: #282E34;
+    color: #DDDDDD;
+}
+
+.section-dark p{
+    background-color: #282E34;
+    color: #DDDDDD;
+}
+
+.pimg-text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000000;
+    font-size: 30px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.pimg-text .border {
+    background-color: #111111;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+.pimg-text .border.trans {
+    background-color: transparent;
+}
+
+@media(max-width: 560px){
+    .pimg-ppg, .pimg-nn {
+        background-attachment: scroll;
+    }
+
+}
+/* ################ END PARALLAX IMAGE SECTION ################ */
+
+/* ################ SECTION INTRO ################ */
+
+#learn-ppg-intro,
+#learn-nn-intro {
+    width: 100%;
+    padding: 50px 0;
+}
+
+#learn-ppg-intro .title-text h3,
+#learn-nn-intro .title-text h3{
+    color: #009696;
+}
+
+/* ################ END SECTION INTRO ################ */
+
+/* ################ LEARN PPG INTRO SECTION ################ */
+
+/* ################ END LEARN PPG INTRO SECTION ################ */
+
+/* ################ LEARN NN INTRO SECTION ################ */
+
+#learn-nn-intro .brain-neurons-magnify-container{
+    padding: 20px 20px;
+    width: 100%;
+    background-image: url(../img/learn-nn-neurons.jpg);
+    background-attachment: fixed;
+}
+
+.brain-neurons-magnify-container-overlay {
+    content: '';
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+/*    box-shadow: 20px 0 100px rgba(0,0,0,.2);
+*/
+    animation: animate-neuron-overlay 10s ease-in-out infinite;
+}
+
+@keyframes animate-neuron-overlay {
+    0%, 100% {
+        left: 0px;
+    }
+    50% {
+        left: calc(100%- 300px);
+    }
+}
+
+
+/* ################ END LEARN NN INTRO SECTION ################ */
+
