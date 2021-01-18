@@ -570,7 +570,9 @@ p {
 /* ################ PARALLAX IMAGE SECTION ################ */
 
 .pimg-ppg,
-.pimg-nn {
+.pimg-nn,
+.pimg-cv,
+.pimg-fi {
     position: relative;
     opacity: 0.70;
     background-position: center;
@@ -586,6 +588,16 @@ p {
 
 .pimg-nn {
     background-image: url(../img/learn-section-nn.png);
+    min-height: 100%;
+}
+
+.pimg-cv {
+    background-image: url(../img/learn-section-cv.jpg);
+    min-height: 100%;
+}
+
+.pimg-fi {
+    background-image: url(../img/learn-section-fi.jpg);
     min-height: 100%;
 }
 
@@ -631,7 +643,7 @@ p {
 }
 
 @media(max-width: 560px){
-    .pimg-ppg, .pimg-nn {
+    .pimg-ppg, .pimg-nn, .pimg-cv, .pimg-fi {
         background-attachment: scroll;
     }
 
@@ -641,13 +653,17 @@ p {
 /* ################ SECTION INTRO ################ */
 
 #learn-ppg-intro,
-#learn-nn-intro {
+#learn-nn-intro,
+#learn-cv-intro,
+#learn-fi-intro {
     width: 100%;
     padding: 50px 0;
 }
 
 #learn-ppg-intro .title-text h3,
-#learn-nn-intro .title-text h3{
+#learn-nn-intro .title-text h3,
+#learn-cv-intro .title-text h3,
+#learn-fi-intro .title-text h3{
     color: #009696;
 }
 
@@ -662,33 +678,21 @@ p {
 #learn-nn-intro .brain-neurons-magnify-container{
     padding: 20px 20px;
     width: 100%;
-    background-image: url(../img/learn-nn-neurons.jpg);
-    background-attachment: fixed;
-}
-
-.brain-neurons-magnify-container-overlay {
-    content: '';
     position: relative;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 100%;
-    background: #000;
-    z-index: 1;
-/*    box-shadow: 20px 0 100px rgba(0,0,0,.2);
-*/
-    animation: animate-neuron-overlay 10s ease-in-out infinite;
 }
 
-@keyframes animate-neuron-overlay {
-    0%, 100% {
-        left: 0px;
-    }
-    50% {
-        left: calc(100%- 300px);
-    }
+#learn-nn-intro .img-magnifier-glass{
+    position: absolute;
+    border: 3px solid red;
+    border-radius: 50%;
+    cursor: none;
+    width: 500px;
+    height: 500px;
 }
 
+#learn-nn-intro .brain-neurons-magnify-container img .hidden{
+    display: none;
+}
 
 /* ################ END LEARN NN INTRO SECTION ################ */
 
