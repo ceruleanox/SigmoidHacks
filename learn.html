@@ -7,8 +7,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     
         <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+        
     </head>
     <body>
 
@@ -54,10 +56,11 @@
         <div id="sideNav">
             <nav>
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#hero">HOME</a></li>
                     <li><a href="learn.html">LEARN</a></li>
-                    <li><a href="https://pulse-ml.herokuapp.com/">VIEW WITH STREAMLIT</a></li>
-                    <li><a href="#">FINAL DEMO</a></li>
+                    <li><a href="https://pulse.w3.ie/">VIEW WEB APP</a></li>
+                    <li><a href="#">WATCH DEMO</a></li>
+                    <li><a href="https://github.com/Greg-Tarr/Pulse">TRY ON GITHUB</a></li>
                 </ul>
             </nav>
         </div>
@@ -188,16 +191,65 @@
                 <h3>INTRODUCTION</h3>
                 <h1>What is a neural network?</h1>
             
-            <p>Neural networks form the base of deep learning, which is a subfield of machine learning where the algorithms are inspired by the structure of the human brain. That is, neural networks are humankind's attempt to copy the brain to create artificial intelligence by taking in data, training itself to recognize patterns in the data, and then predicting the output for a new set of similar data.</p>
+            <p>Neural networks form the base of deep learning, which is a subfield of machine learning where the algorithms are inspired by the structure of the human brain. That is, neural networks are humankind's attempt to copy the brain to create artificial intelligence. Similar to how the brain works, neural networks take in data, train themseles to recognize patterns in data, and then predict the output for a new set of similar data.</p>
 
-            <p>First off, how does the brain work? To be honest, the brain is the most complicated organ in the human body that's been studied and hypothesized for centuries, so there's a lot we still don't know. For now, here's what we do know.</p>
+            <h1>How does the brain work?</h1>
+
+            <p>Granted the brain is the most complicated organ in the human body that has been studied and hypothesized for centuries, there's a lot we still don't know. For now, here's what we do know.</p>
                 
-            <p>Mouse over this image of a network of brain neurons below to see a close up of what a neuron looks like.</p>
+            <p>In the human brain, there is a complex network of 85+ billion neurons that interact with each other to communicate and process information based on what we see, hear, move, think, etc. Each neuron has:</p>
+                <ul>
+                    <li><b>dendrites</b>, which receives input from other neurons</li>
+                    <li><b>axon</b>, which is basically the output of the neuron</li>
+                </ul>
+            <br><br>
 
-            <div class="brain-neurons-magnify-container">
-                <img id="brain-neurons" src="img/learn-nn-neurons.jpg" width="95%">
+            <p>Mouse over the below image showing a network of brain neurons to explore what a single neuron looks like in outline form.</p>
+
+            <canvas id="canvas-brain-neurons" width="1250" height="640"></canvas>
+            <p><center>Mouse over image to reveal more</center></p>
+            <br><br>
+
+            <p>Connected to other neurons' axons, dendrites receive neurotransmitters from the axon of other neurons, which in turn creates a small positive spike in the neuron. If the neuron receives enough positive spike, the neuron sends a positive spike down its axon, which then releases neurotransmitters to all neurons connected to its axon branches. This, in turn, produces a positive spike in those neurons — and the cycle goes on and on.</p> 
+                
+            <p>Of note, some connections between neurons are stronger than others, and neurons with stronger connections receive a larger positive spike than neurons with weaker connections. That means neurons with stronger connections are closer to being triggered to release neurotransmitters to their connected neurons.</p>
+
+            <h1>How does this translate to neural networks?</h1>
+
+            The below image transitions from a simplified outline of what a network of neurons look like to a network graph. 
+
+            <div id="learn-nn-graph-cf">
+                <img src="img/learn-nn-neuron-network-graph-weighted.png">
+                <img src="img/learn-nn-neuron-network-graph.png">
+                <img src="img/learn-nn-neuron-network.png">
             </div>
 
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <p>In network graph form, the circles are neurons and the lines are connections between neurons. Each connection has a strength associated with it, called the weight. Weight can range between -1 and 1. Weights in red are positive connections, and weights in blue are negative connections.</p>
+
+            <p>In network graph form, the circles are neurons and the lines are connections between neurons. Each connection has a strength associated with it, called the weight, and it ranges between -1 and 1.</p>
+
+            <p>A single neuron or node in the graph is called a perceptron. It has many connections to other perceptrons coming in and going out. Inside it, two processes go on. The first sums up all the connections or inputs coming into the perceptron, and the second is known as the activation function. While there are many activation functions available, for our purposes we'll talk about the step function. </p>
+            
+            <p>The activation function computes how much input the neuron needs before it gets triggered. Let's put it in math terms whereby the function returns 1 if x is positive, and it returns 0 if x is zero or negative. The perceptron then outputs the result of the activation function to each neuron that it is connected to. These outputs are then multipled by the weights associated with each connection. And that's basically a very simplified version of how the brain works and how a neural network functions behind the scenes.</p>
+ 
+            <h1>So how does this work?</h1>
+            
+            <p>Ultimately, neural networks simulate behavior. Let's start by laying down some key terminology.</p>
+
+            <p>A <b>layer</b> is a column of neurons. In our example, we have 4 columns. The first layer is known as the input layer, and the final layer is known as the output layer. There's also something called the <b>bias neuron</b>; it's a neuron like the input neuron, but it's always set to 1. This neuron can be connected to any neuron in the input layer. We'll talk more about this later.</p>
+
+            <p>In the context of computer vision, a camera sees a 2x2 image, and pixels can only be black or white. To detect a pattern, we eventually want to see one of two possibilities: either a grid where the upper left quadrant and lower right quadrant are black, or a grid where the lower left quadrant and upper right quadrant are black. Or really, a checkerboard pattern.</p>
+
+            <p>In a neural network, each layer is combining features from the previvous layer. Brandon Rohrer helps explain and visualize the above really well in <a href="https://www.youtube.com/watch?v=ILsA4nyG7I0&lc=UghnCyw_Li-mGHgCoAEC&ab_channel=BrandonRohrer" target="_blank">this video</a>.</p>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ILsA4nyG7I0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <br><br><br>
+            
+            <p>When an input doesn't end up in a checkerboard pattern, the output neuron should output 0. Of course, neural networks are a lot more complicated than this, so it's not feasible the manually set all the neurons and weights. This is where the genetic algorithm comes in — to learn and evolve ways and algorithms. Those with better behaviors survive and pass on its genes (i.e. the weights), and through evolution the neural network knows how to do the desired task at hand.</p>
+            
             <p>
                 <center><a href="#learn-top">Back to the top</a></center>
             </p>        
@@ -217,8 +269,45 @@
                 <h3>INTRODUCTION</h3>
                 <h1>Methodologies</h1>
             
-            <p></p>
+                <h2>Face Detection</h2>
+                <br><br>
+                <p>Face detection is a way to find and identify human faces in digital images or video. It typically uses a feature invariant method by searching for human eyes, which is one of the easiest features to detect. From there, the algorithm might attempt to detect the mouth, nose, and even the eyes' iris. Once the algorithm concludes that it has found a facial region, it applies additional tests to confirm that it has detected a face.</p>
 
+                <p>There are various methods used in face detection, and each has its own advantages and disadvantages:</p>
+
+                <h4>Knowledge-based or Rule-based</h4>
+                <p><center>Describes a face based on rules. The hard part is coming up with well-defined rules!</center></p>
+
+                <h4>Feature invariant methods</h4>
+                <p><center>Uses features like a person's eyes, nose, or mouth to detect a face. However, variations in noise and light on the image can affect its accuracy.</center></p>
+
+                <h4>Appearance-based methods</h4>
+                <p><center>Uses statistical analysis and machine learning to find relevant characteristics of face images.</center></p>
+                
+                <p>There are also techniques used in face detection to help identify faces. Removing the background, for example, can help reveal face boundaries for images with a mono-color background. In color images, sometimes skin color can be used to find faces, but it doesn't always work and can <a href="https://www.ajl.org/" target="_blank">do harm</a>. Using motion to find faces by calculating the moving area is yet another technique. The assumption made here is that a face is almost always moving in real-time video. Of course, there's the inherent risk of objects moving in the background. </p>
+
+                <p> Nevertheless, detecting faces can be difficult because of varying factors like pose, expression, position and orientation, presence of glasses or facial hair, and even image resolution.</p>
+
+                <h2>ROI Extraction</h2>
+                <br><br>
+                <p>According to Wikipedia, a region of interest (ROI), are samples within a data set identified for a particular purpose. It's a form of annotation, often associated with categorical or quantitative information (e.g. volume), expressed as text or in a structured form.</p>
+                    
+                <p>In the context of computer vision, the ROI defines the borders of an object under consideration. In many applications, symbolic (textual) labels are added to a ROI, to describe its content in a compact way. And within a ROI, there may be individual points of interest (POIs).</p>
+
+                <p>There are three fundamentally different means of encoding a ROI:</p>
+
+                <p>1.) As an integral part of the sample data set, with a unique or masking value that may or may not be outside the normal range of normally occurring values and which tags individual data cells</p>
+
+                <p>2.) As separate, purely graphic information, such as with vector or bitmap (rasterized) drawing elements, potentially with some accompanying plain (unstructured) text in the format of the data itself</p>
+                    
+                <p>3.) As a separate structured semantic information (e.g. coded value types) with a set of spatial and/or temporal coordinates</p>
+                
+                <h2>RGB Analysis</h2>
+                <br><br>
+
+                <p>From the pixels contained in the region of interest, the raw signal can be computed per frame as the mean value of each of the RGB color channels. In doing so, we can average out camera noise contained in single pixels; this is also known as spatial pooling. After normalizing the level of raw signals, we can then compare whether variations are significant. 
+                    
+</p>
             <p>
                 <center><a href="#learn-top">Back to the top</a></center>
             </p>
@@ -228,7 +317,7 @@
         <div class="pimg-fi">
             <div class="pimg-text">
                 <span class="border">
-                    Computer Vision
+                    Future Innovations
                 </span>
             </div>
         </div>
@@ -238,7 +327,23 @@
                 <h3>WHAT'S NEXT</h3>
                 <h1>Use Cases</h1>
             
-            <p></p>
+                <p>With the rise in telehealth and more sophisticated machine learning possibilities being discovered, there are so many use cases for this — including but not limited to:  </p>
+
+                <h2>Measuring Heart Health </h2>
+                <br><br>
+                <p>Knowing your heart rate is important because the heart's function is so crucial. Namely, the heart is what's responsible for circulating oxygen and nutrient-rich blood throughout your body. When it's not working as expected, basically everything in the body is affected.</p>
+
+                <h2>Training and Fitness Optimization</h2>
+                <br><br>
+                <p>Many top athletes and individuals who regularly exercise are interested in optimizing their training and fitness by understanding how their body responds to training and recovers.</p>
+
+                <h2>Improving Meditation</h2>
+                <br><br>
+                <p>A lower heart rate is one of the positive physiological effects of meditation and can indicate how effect a practice is.</p>
+
+                <h2>Anxiety Treatment</h2>
+                <br><br>
+                <p>Anxiety disorders are the most common psychiatric disorders today that have been shown to increase the risk of heart disease, so finding a slower heart rate could help with identifying and getting checked out sooner.</p>
 
             <p>
                 <center><a href="#learn-top">Back to the top</a></center>
@@ -255,8 +360,6 @@
 
     <script src="js/menu.js"></script>
     <script src="js/scroll.js"></script>
-    <script src="js/magnify.js"></script>
-    <script>
-        magnify("brain-neurons", 1);
-    </script>
+    <script src="js/xray.js"></script>
+
 </html>

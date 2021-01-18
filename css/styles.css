@@ -145,7 +145,7 @@ nav ul li a {
 
 #learn {
     width: 100%;
-    padding: 80px 0;
+    padding: 80px 0px 0px;
     background: #009696;
 }
 
@@ -675,24 +675,108 @@ p {
 
 /* ################ LEARN NN INTRO SECTION ################ */
 
-#learn-nn-intro .brain-neurons-magnify-container{
-    padding: 20px 20px;
-    width: 100%;
+#learn-nn-graph-cf {
     position: relative;
+    margin: 20 auto;
+    width: 100%;
 }
 
-#learn-nn-intro .img-magnifier-glass{
+#learn-nn-graph-cf img {
     position: absolute;
-    border: 3px solid red;
-    border-radius: 50%;
-    cursor: none;
-    width: 500px;
-    height: 500px;
+    left: 0;
+    width: 100%;
+
+    -webkit-animation-name: cfFadeInOut;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+  
+    -moz-animation-name: cfFadeInOut;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-duration: 6s;
+  
+    -o-animation-name: cfFadeInOut;
+    -o-animation-timing-function: ease-in-out;
+    -o-animation-iteration-count: infinite;
+    -o-animation-duration: 6s;
+  
+    animation-name: cfFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
 }
 
-#learn-nn-intro .brain-neurons-magnify-container img .hidden{
-    display: none;
+#learn-nn-graph-cf img:nth-of-type(1) {
+    -webkit-animation-delay: 4s;
+    -moz-animation-delay: 4s;
+    -o-animation-delay: 4s;
+    animation-delay: 4s;
+  }
+
+  #learn-nn-graph-cf img:nth-of-type(2) {
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    animation-delay: 2s;
+  }
+  #learn-nn-graph-cf img:nth-of-type(3) {
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+  }
+
+/*
+#learn-nn-graph-cf img {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+
+#learn-nn-graph-cf img.transparent {
+    opacity: 0;
+}
+
+#learn-nn-graph-cf img.top {
+    animation-name: cfFadeInOut;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-direction: alternate;
+}
+
+*/
+
+#cf-onclick{
+    cursor: pointer;
+}
+
+@keyframes cfFadeInOut {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 /* ################ END LEARN NN INTRO SECTION ################ */
 
+/* ################ LEARN CV INTRO SECTION ################ */
+
+/* ################ END LEARN CV INTRO SECTION ################ */
